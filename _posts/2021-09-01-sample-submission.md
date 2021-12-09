@@ -1,197 +1,43 @@
 ---
 layout: post
-title: Sample Submission
-authors: Bubeck, Sebastien (Microsoft); Dobre, David (Mila); Gauthier, Charlie (Mila); Gidel, Gauthier (Mila); Vernade, Claire (DeepMind)
-tags: [sample, template, tutorial]  # This should be the relevant areas related to your blog post
+title: Rewriting the Rules of the Game:
+subtitle: Considerations for the Implementation of Artificial Intelligence and Data Science in Medicine 
+authors: Ramirez, Nick (Harvard University, MIT)
+tags: [artificial intelligence, data science, healthcare]  # This should be the relevant areas related to your blog post
 ---
 
-This post outlines a few more things you may need to know for creating and configuring your blog posts.
+Today, there is significant enthusiasm in the medical community about using artificial intelligence (AI) in healthcare. There have been several early successes in implementing AI into the healthcare space involving diagnostic tools and radiological image analysis that have piqued this interest, and while undeniably exciting, the widespread implementation of these tools may not be welcomed with open arms by physicians or patients. Discussing why AI tools are necessary to move healthcare forward while proactively addressing these concerns that come with them is critical to ensure that ethical innovation can continue to flourish and that the benefits of AI can improve the practice of medicine across the globe.
 
-1. [Configurations](#configurations)
-2. [Creating Posts](#creating-posts)
-3. [Images](#images)
-4. [Interactive Figures](#interactive-figures)
-5. [$\LaTeX\$](#latex)
-6. [References](#references)
+After working at the intersection of machine learning and medicine for a couple of years now, I’ve noticed that physicians tend to loathe all the time they spend bathed in the blue light of computer screens. Complaining of a “death by a thousand clicks,” compulsively blaming the computer makes sense. Yet, the roots of the shift towards electronic health records (EHR) run far deeper than insurance companies looking after their bottom line.
 
-## Configurations
+It is particularly concerning that physicians are undergoing higher rates of burnout now than before1 when the need for them to be engaged is only increasing. It seems that every five minutes there is some new article on PubMed describing some breakthroughs in genetics, immunology, or cancer biology; the rate of medical knowledge expansion seems to grow faster by the day. Meanwhile, patients are living longer, and while an indicator of the success of modern medicine, this presents more complicated cases. Older patients have more coexisting medications and illnesses, with an accumulated paper trail of EHR data of specialist notes and diagnostic tests from Los Angeles to New York City. Every patient is quickly becoming a “big data” challenge, and our physicians are ill-equipped to rise to it.
 
-You should **NOT** modify the default values in `_config.yml`, found in the root directory of this repo.
-These must be left as is for the correct export and eventual merging to the master ICLR repo.
+Information overload is perhaps an understatement—medical decision-making is now maddeningly complicated. Despite this, patients and physicians alike crave simple answers. Diagnosing patients is an art, and the practitioners of its form are increasingly under strain, so the commonality of misdiagnosis remains a pervasive issue2. Patients seeking emergency care are often unnecessarily admitted to the hospital while others die soon after being sent home3. Physicians cannot effectively consume the overwhelming amount of information at their disposal, leading to compromised care that contributes to burnout.
 
-## Creating Posts
+Here is where politics begins to muddle the waters. Especially in the wake of COVID-19, with our healthcare system’s flaws laid bare, calls for change on the policy level abound. Yet, given the gridlock on Capitol Hill, it seems unwise to place our hopes in sweeping government reform and instead seek refuge politically agnostic solutions. Calls for doctors to work harder, reduce unnecessary care, or change incentives are all naïve to the heart of healthcare’s challenges: their complexity. The first step to solving any problem is acknowledging that there is one; the good news is that we’ve gotten that far. The bad news is that we haven’t taken any significant strides towards ameliorating our wounded healthcare system since the passage of the Affordable Care Act a lifetime ago. 
 
-To create a new post in the blog, add a new Markdown file to the `_posts/` directory, with the name 
-following the format `2022-05-03-submission-name.md` (note the date is the start of the conference).
-Begin the post with the following code (which will be used to automatically generate a BibTeX entry
-at the bottom of your post):
+Despite all this, I’m hopeful. Years ago, we realized that without additional tools, we would not be able to analyze the human body to the desired degree, spurring the invention of microscopes and stethoscopes to CT scans and MRIs—all of which are integral to the practice of modern medicine. Why should our innovation stop there? The computers of today seem to only occlude the art of medicine with their endless bureaucratic barriers, and while tempting to suggest uprooting them entirely, that would be a mistake. Computers can process copious amounts of information without fatigue, synthesizing data in ways far beyond innate human ability, almost begging us to double down on our bet that they can streamline the healthcare system.
 
-```markdown
----
-layout: post
-title: [SUBMISSION NAME]
-authors: [AUTHORS]
-tags: [TAGS]
----
-```
+In his piece on this subject, Dr. Ziad Obermeyer discusses the challenge of reading electrocardiograms as one example of where the implementation of effective machine learning methods could save lives. He writes that doctors look for a few features to diagnose ischemia or rhythm disturbances with the caveat that reading the waveforms in a 10-second tracing or a multi-day recording of a Holter monitor is idealistic at best4. Despite this, a study by Syed et al. suggests subtle signs that can identify variations associated with sudden cardiac death5, which algorithms could validate, allowing us to create interventions that could save tens of thousands of lives per year. Just this year, an assortment of machine learning classifiers and neural networks were able to accurately predict coronary artery disease6, showing substantial promise in the ability of computers to be valuable tools in the fight to improve patient outcomes.
 
-From there, write your content as you would a normal Markdown file.
-For a more high-level and generic overview of how to format Markdown files such as formatting text,
-code, headings, etc. check out the [Example Content]({% post_url 2020-04-02-example-content %}) post.
+There are many studies like the ones above that appear to validate the use of AI in a clinical setting, and while there are several reasons to be optimistic and supportive of its implementation, we must be cautious in doing so. Continuing with the example of coronary artery disease, while it is remarkable that a machine can predict a diagnosis with a high level of accuracy, it is natural to wonder how it does so. Machine learning models all learn by discovering patterns in the data provided to them, making it critical to realize that all the data these models train on are the product of human decisions. These models are not gaining an understanding of the biology of coronary artery disease but instead the path of decisions that lead to the diagnosis.
 
-## Images
+The predictions AI can make are only as good as the data it learns from, and the reality is that it alone will not solve the systemic problems grandfathered into our healthcare system. From failing to notice those who cannot afford care to mirroring racial biases, ignoring these facts when creating these models will only amplify the inequities embedded in medicine. Identifying and addressing these problems will require intimate familiarity with both the worlds of medicine and computer science, highlighting the need for biomedical data scientists and physicians literate in statistics. This reality reminds us that machine learning in medicine will be a team sport, a set of tools to assist doctors in making educated decisions and not the impending automation of the medical field.
 
-If you include an image hosted elsewhere on the web simply use the standard GitHub-flavoured-MarkDown 
-syntax (be wary of copyrights):
+But what about the patients?
 
-```
-![Example Image](https://iclr.cc/static/core/img/ICLR-logo.svg)
-```
+Despite the promise—and the challenges—AI holds from a physician's perspective, it is also imperative to consider patients' concerns because, if not addressed, our efforts at the intersection of the machine learning and medical fields will be for naught. A study by Richardson et al.7 delves into patient apprehensions by conducting 15 focus groups with approximately 90 patients with diverse backgrounds between the end of 2019 and the beginning of 2020. The myriad of concerns these individuals hold is far-reaching, but the core of them all is safety.
 
-![Example Image](https://iclr.cc/static/core/img/ICLR-logo.svg)
+Concerns are the center of this discussion, but it would be remiss to fail to acknowledge that patients are excited about the potential of AI in healthcare. Despite popular culture often villainizing an exaggerated AI, from Ultron to Skynet, patients believe that the use of AI is compatible with the goals of medicine: to heal as many people as possible. The patients also described AI as an emerging technology, contributing to their optimism and safety concerns, suggesting a careful and extensive testing period before deploying these models to assure accuracy. 
 
+To address this, close collaboration between physicians and data scientists to develop a model on previously acquired hospital data that would mirror novel data collection would be paramount. This makes the critical assumption that the data from prior patients would be similar to that of future patients. Therefore, having a system in place to retrain the model after a specific amount of time would be imperative to ensure the maintenance of optimal performance. 
 
-Its generally a better idea to avoid linking to images hosted elsewhere - links can break and you
-might face losing important information in your blog post. 
-To include images in your submission in this way, you must do something like the following:
+Participants in the Richardson study also called for regulatory protections against potential harm but were unsure what they should include or who should enact them. Solely placing the responsibility of managing AI operations on administrators, physicians, or data scientists would likely lead to oversights that could endanger patient wellbeing. Thus, this would require an interdisciplinary team from all three groups to assuage patient concerns about safety and potential legal liability.
 
-```markdown
-{% raw %}![ICLR LOGO]({{ site.url }}/public/images/2021-09-01-sample-submission/ICLR-logo.png){% endraw %} 
-```
+While the suggestions regarding regulations were vague and likely would require extensive input from multiple parties to refine, patients were clear about the expectations for their healthcare providers. They believed that healthcare providers, not just physicians, should retain final discretion over treatment plans. Reasons for this included the uniqueness for each patient and a healthy amount of skepticism that AI tools could appropriately tailor treatment to the degree a trained physician can. As in the earlier discussion of integrating AI from a physician’s perspective, patients agree that algorithms should not have the ability to act autonomously in a clinical setting but instead provide physicians with recommendations on decisions directly related to patient care.
 
-which becomes:
+Safely implementing AI in the clinical setting is feasible, but like all conversations about healthcare in the United States, costs and insurance coverage are worrisome. Many study participants were concerned that the addition of these advanced technologies will increase the cost of their healthcare. Similarly, patients were concerned that AI recommendations could be wielded by insurance companies to determine which treatments and tests were covered, taking away from the discretion that has been historically the physicians’ alone. For example, advances in computer vision allow for highly accurate predictions, yet the information embedded within these neural networks could be used maliciously by insurance companies to increase premiums or deny coverage. These encoded features have been shown to pick up patient characteristics such as race from medical images8, which could be used to reinforce existing discrimination in healthcare. 
 
-![ICLR LOGO]({{ site.url }}/public/images/2021-09-01-sample-submission/ICLR-logo.png)
+Respect for patient autonomy and privacy are cornerstones of medical ethics9, and compromising them would greatly diminish trust in the use of AI in the healthcare system. Concerns regarding discrimination based on predictive analytics are similar to those regarding genetic information back in the late 90’s10. It is unclear if legislators will recognize these similarities and craft legal protections that apply to AI-enabled predictions and collaborate closely with the medical field, including patients, to consider effective policy responses. 
 
-The {% raw %}`{{ site.url }}`{% endraw %} syntax expands the site URL for you.
-To ensure that there are no namespace conflicts, you must save your asset to your unique directory
-`/public/images/2022-05-03-[SUBMISSION NAME]` within your submission.
-
-## Interactive Figures
-
-Here's how you could embed interactive figures that have been exported as HTML files.
-Note that we will be using plotly for this demo, but anything built off of HTML should work
-(**no javascript is allowed!**).
-All that's required is for you to export your figure into HTML format, and make sure that the file 
-exists in the `_includes/[SUBMISSION NAME]/` directory in this repository's root directory.
-To embed it into any page, simply insert the following code anywhere into your page.
-
-```markdown
-{% raw %}{% include [FIGURE_NAME].html %}{% endraw %} 
-```
-
-For example, the following code can be used to generate the figure underneath it.
-
-```python
-import pandas as pd
-import plotly.express as px
-
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv')
-
-fig = px.density_mapbox(df, lat='Latitude', lon='Longitude', z='Magnitude', radius=10,
-                        center=dict(lat=0, lon=180), zoom=0,
-                        mapbox_style="stamen-terrain")
-fig.show()
-
-fig.write_html('./_includes/2021-09-01-sample-submission/plotly_demo_1.html')
-```
-
-And then include it with the following:
-
-```markdown
-{% raw %}{% include 2021/2021-09-01-sample-submission/plotly_demo_1.html %}{% endraw %} 
-```
-
-Voila!
-
-{% include 2021-09-01-sample-submission/plotly_demo_1.html %}
-
-
-The above figure is pretty cool, but you can also embed heavier/more complex figures.
-For brevity, the following figure is generated from the figure produced in 
-[this plotly tutorial](https://plotly.com/python/dropdowns/).
-
-{% include 2021-09-01-sample-submission/plotly_demo_2.html %}
-
-
-## $\LaTeX$
-
-### Inline
-
-To add inline math, you can use `$ <math> $`. Here is an example:
-
-
-`$ \sum_{i=0}^j \frac{1}{2^n} \times i $` becomes
-$ \sum_{i=0}^j \frac{1}{2^n} \times i $
-
-### Block
-
-To add block math, you *must* use `$$<math>$$`. Here are some examples:
-
-```
-$$\begin{equation}
-a \times b \times c = 0 \\
-j=1 \\
-k=2 \\
-\end{equation}$$
-```
-
-...becomes...
-
-$$\begin{equation}
-a \times b \times c = 0 \\
-j=1 \\
-k=2 \\
-\end{equation}$$
-
-```
-$$\begin{align}
-i2 \times b \times c =0 \\
-j=1 \\
-k=2 \\
-\end{align}$$
-```
-
-...becomes...
-
-$$\begin{align}
-i2 \times b \times c =0 \\
-j=1 \\
-k=2 \\
-\end{align}$$
-
-Don't forget the enclosing `$$`! Otherwise, your newlines won't work:
-
-```
-\begin{equation}
-i2=0 \\
-j=1 \\
-k=2 \\
-\end{equation}
-```
-
-...becomes...
-
-\begin{equation}
-i2=0 \\
-j=1 \\
-k=2 \\
-\end{equation}
-
-
-## References
-
-You'll notice that at the bottom of every post, a BibTeX entry is automatically generated for
-you from the header you added at the beginning.
-For example,
-
-```markdown
----
-layout: post
-title: ICLR Blog Post Sample Submission
-authors: Bubeck, Sebastien (Microsoft); Dobre, David (Mila); Gauthier, Charlie (Mila); Gidel, Gauthier (Mila); Vernade, Claire (DeepMind)
-tags: [sample, template]
----
-```
-
-gets rendered to what you see below this.
+As previously mentioned, using AI in medicine will be a team sport; physicians, data scientists, patients, and government officials all have critical roles to play if the deployment of these potentially lifesaving models will succeed. The integration of data science and medicine has already begun. Cell biology and genetics were foreign not too long ago and are now core research areas. Education for both physicians and patients alike has made the relevant parties informed and able to receive the benefits of such understanding—the same efforts are needed for data science and AI in the medical field. If we can address the challenges facing physicians—and the concerns held by patients—by continuing this conversation, our healthcare workers will finally have the tools to conquer one of the most pressing big data challenges: treating patients in the 21st century.
