@@ -3,7 +3,7 @@ layout: post
 title: Rewriting the Rules of the Game:
 subtitle: Considerations for the Implementation of Artificial Intelligence and Data Science in Medicine 
 authors: Ramirez, Nick (Harvard University, MIT)
-tags: [artificial intelligence, data science, healthcare]  # This should be the relevant areas related to your blog post
+tags: [artificial intelligence, data science, healthcare] 
 ---
 
 Today, there is significant enthusiasm in the medical community about using artificial intelligence (AI) in healthcare. There have been several early successes in implementing AI into the healthcare space involving diagnostic tools and radiological image analysis that have piqued this interest, and while undeniably exciting, the widespread implementation of these tools may not be welcomed with open arms by physicians or patients. Discussing why AI tools are necessary to move healthcare forward while proactively addressing these concerns that come with them is critical to ensure that ethical innovation can continue to flourish and that the benefits of AI can improve the practice of medicine across the globe.
